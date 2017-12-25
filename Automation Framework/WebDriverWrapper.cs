@@ -16,6 +16,7 @@ namespace Automation_Framework
             defaultTimeoutInSec = 10;
             webdriver = new ChromeDriver();
             wait = new WebDriverWait(webdriver, TimeSpan.FromSeconds(defaultTimeoutInSec));
+            webdriver.Manage().Window.Maximize();
         }
 
         public void Dispose()
