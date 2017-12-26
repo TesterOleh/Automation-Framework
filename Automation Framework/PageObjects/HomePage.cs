@@ -7,6 +7,7 @@ namespace Automation_Framework.PageObjects
         protected WebDriverWrapper webdriver;
         protected string baseUrl = "http://www.quizful.net/";
         protected By enterLink = By.XPath("//*[contains(text(),'войти')]");
+        protected By enterBlockTitle = By.XPath("//div[@id='login-form']/div[@class='title']");
 
         public HomePage(WebDriverWrapper webdriver)
         {
@@ -19,10 +20,10 @@ namespace Automation_Framework.PageObjects
             return new HomePage(webdriver);
         }
 
-        public void ClickEnter()
+        public void ClickOnEnterLink()
         {
-
             webdriver.Click(enterLink);
         }
+
     }
 }

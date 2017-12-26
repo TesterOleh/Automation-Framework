@@ -51,5 +51,11 @@ namespace Automation_Framework
             wait.Until(ExpectedConditions.ElementIsVisible(by));
             webdriver.FindElement(by).SendKeys(text);
         }
+
+        public bool IsElementDisplayed(By by)
+        {
+            return webdriver.FindElement(by).Displayed;
+        }
+
     }
 }
