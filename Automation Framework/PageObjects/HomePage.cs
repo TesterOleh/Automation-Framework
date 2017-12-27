@@ -2,22 +2,14 @@
 
 namespace Automation_Framework.PageObjects
 {
-    class HomePage
+    class HomePage : BasePageObject
     {
-        protected WebDriverWrapper webdriver;
-        protected string baseUrl = "http://www.quizful.net/";
         protected By enterLink = By.XPath("//*[contains(text(),'войти')]");
         protected By enterBlockTitle = By.XPath("//div[@id='login-form']/div[@class='title']");
 
-        public HomePage(WebDriverWrapper webdriver)
+        public HomePage(WebDriverWrapper webdriver) : base(webdriver)
         {
-            this.webdriver = webdriver;
-        }
-
-        public HomePage Open()
-        {
-            webdriver.OpenPage(baseUrl);
-            return new HomePage(webdriver);
+            PageUrl = "http://www.quizful.net/";
         }
 
         public void ClickOnEnterLink()

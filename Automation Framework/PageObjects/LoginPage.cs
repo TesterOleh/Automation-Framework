@@ -2,24 +2,16 @@
 
 namespace Automation_Framework.PageObjects
 {
-    class LoginPage
+    class LoginPage : BasePageObject
     {
-        protected WebDriverWrapper webdriver;
-        protected string baseUrl = "http://www.quizful.net/LoginAction.loginForm";
         protected By usernameField = By.XPath("//input[@id='login']");
         protected By passwordField = By.XPath("//input[@type='password']");
         protected By enterButton = By.XPath("//input[@type='submit']");
         protected By exitLink = By.XPath("//a[text()='выйти']");
 
-        public LoginPage(WebDriverWrapper webdriver)
+        public LoginPage(WebDriverWrapper webdriver) : base(webdriver)
         {
-            this.webdriver = webdriver;
-        }
-
-        public LoginPage Open()
-        {
-            webdriver.OpenPage(baseUrl);
-            return new LoginPage(webdriver);
+            PageUrl = "http://www.quizful.net/LoginAction.loginForm";
         }
 
         public LoginPage EnterUsername(string username)

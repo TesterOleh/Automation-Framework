@@ -7,7 +7,7 @@ namespace Automation_Framework
     class Login : BaseTest
     { 
         [Test]
-        public void LoginTest()
+        public void Test()
         {
             HomePage home = new HomePage(webdriver);
 
