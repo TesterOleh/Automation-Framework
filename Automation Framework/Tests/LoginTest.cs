@@ -4,10 +4,10 @@ using NUnit.Framework;
 
 namespace Automation_Framework
 {
-    class Login : BaseTest
+    class LoginTest : BaseTest
     { 
         [Test]
-        public void Test()
+        public void Login()
         {
             HomePage home = new HomePage(webdriver);
 
